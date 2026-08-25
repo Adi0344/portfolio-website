@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Portfolio</title>
+    <script src="https://tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 bg-slate-900/80 backdrop-blur border-b border-slate-800 z-50">
+        <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-mono font-bold text-emerald-400">&lt;DevOps.Adi /&gt;</a>
+            <div class="space-x-6 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-emerald-400 transition">About</a>
+                <a href="#skills" class="hover:text-emerald-400 transition">Skills</a>
+                <a href="#projects" class="hover:text-emerald-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-20 md:py-32 flex flex-col justify-center">
+        <p class="text-sm font-mono text-emerald-400 mb-3">Hi, my name is</p>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-4">DevOps Engineer.</h1>
+        <h2 class="text-2xl md:text-4xl font-bold text-slate-400 mb-6">I build automated, scalable, and reliable cloud infrastructure.</h2>
+        <p class="max-w-xl text-slate-400 mb-8 leading-relaxed">
+            Specializing in infrastructure provisioning, CI/CD automation, orchestration tools, and setting up observable architectures across multi-cloud environments.
+        </p>
+        <div>
+            <a href="#projects" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-6 py-3 rounded transition">View My Projects</a>
+        </div>
+    </section>
+
+    <!-- Tech Stack / Skills Section -->
+    <section id="skills" class="max-w-5xl mx-auto px-6 py-16 border-t border-slate-800">
+        <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-2"><span class="text-emerald-400 font-mono">01.</span> Tech Stack Matrix</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-slate-800/50 p-5 rounded-lg border border-slate-700/50">
+                <h3 class="font-bold text-emerald-400 mb-3">Cloud</h3>
+                <ul class="text-sm space-y-2 text-slate-400"><li>AWS</li><li>Azure</li><li>GCP</li></ul>
+            </div>
+            <div class="bg-slate-800/50 p-5 rounded-lg border border-slate-700/50">
+                <h3 class="font-bold text-emerald-400 mb-3">IaC & Automation</h3>
+                <ul class="text-sm space-y-2 text-slate-400"><li>Terraform</li><li>Ansible</li><li>Pulumi</li></ul>
+            </div>
+            <div class="bg-slate-800/50 p-5 rounded-lg border border-slate-700/50">
+                <h3 class="font-bold text-emerald-400 mb-3">CI/CD & Containers</h3>
+                <ul class="text-sm space-y-2 text-slate-400"><li>GitHub Actions</li><li>Docker</li><li>Kubernetes</li></ul>
+            </div>
+            <div class="bg-slate-800/50 p-5 rounded-lg border border-slate-700/50">
+                <h3 class="font-bold text-emerald-400 mb-3">Observability</h3>
+                <ul class="text-sm space-y-2 text-slate-400"><li>Prometheus</li><li>Grafana</li><li>ELK Stack</li></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="max-w-5xl mx-auto px-6 py-16 border-t border-slate-800">
+        <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-2"><span class="text-emerald-400 font-mono">02.</span> Infrastructure Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Project 1 -->
+            <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-lg hover:border-slate-700 transition">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-3xl">📁</span>
+                    <span class="text-xs font-mono text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">Production</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Automated EKS Cluster Setup</h3>
+                <p class="text-sm text-slate-400 mb-4 leading-relaxed">Multi-region AWS EKS deployment engineered completely with Terraform module templates. Includes automated ingress control systems and cluster internal security architectures.</p>
+                <div class="flex gap-3 text-xs font-mono text-slate-400"><span>Terraform</span><span>AWS</span><span>EKS</span></div>
+            </div>
+            <!-- Project 2 -->
+            <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-lg hover:border-slate-700 transition">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="text-3xl">📁</span>
+                    <span class="text-xs font-mono text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">CI/CD Pipeline</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">GitSec Continuous Delivery Pipeline</h3>
+                <p class="text-sm text-slate-400 mb-4 leading-relaxed">Constructed a robust GitHub Actions engine executing runtime safety checks, automated linting rules, application compilation tests, container scanning, and canary server drops.</p>
+                <div class="flex gap-3 text-xs font-mono text-slate-400"><span>GitHub Actions</span><span>Docker</span><span>Trivy</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-5xl mx-auto px-6 py-20 text-center border-t border-slate-800">
+        <h2 class="text-sm font-mono text-emerald-400 mb-3">03. What's Next?</h2>
+        <h3 class="text-4xl font-bold text-white mb-4">Get In Touch</h3>
+        <p class="max-w-md mx-auto text-slate-400 mb-8 text-sm">
+            I am always open to consulting on infrastructure redesigns, serverless integration setups, or full-time opportunities. Drop a message!
+        </p>
+        <a href="mailto:your.email@example.com" class="inline-block border border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 font-mono text-sm px-6 py-3 rounded transition">
+            Say Hello
+        </a>
+    </section>
+
+    <footer class="text-center py-8 border-t border-slate-800 text-xs font-mono text-slate-500">
+        Designed & Built by Adi
+    </footer>
+
+</body>
+</html>
