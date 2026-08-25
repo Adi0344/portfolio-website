@@ -1,0 +1,40 @@
+/* Custom Glow and Terminal Typing Aesthetics */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(34, 211, 238); }
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid rgb(34, 211, 238);
+    white-space: nowrap;
+    animation: 
+        typing 2s steps(30, end) infinite alternate,
+        blink-caret .75s step-end infinite;
+}
+
+/* Pulsing Status Heartbeat */
+.heartbeat {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .4; transform: scale(1.15); }
+}
+
+/* Subtle Interactive Scaling Transforms */
+.project-card, .skill-pill {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -15px rgba(34, 211, 238, 0.15);
+}
