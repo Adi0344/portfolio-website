@@ -1,30 +1,37 @@
+/**
+ * Developer Architecture Layout Control Script
+ */
 document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    
+    const filterButtons = document.querySelectorAll('.filter-toggle');
+    const catalogCards = document.querySelectorAll('.project-node-card');
 
-    // Interactive Repository Filtering System
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active style state from all filter nodes
-            filterButtons.forEach(btn => {
-                btn.classList.remove('active-filter', 'bg-cyan-500/10', 'text-cyan-400', 'border-cyan-500/30');
-                btn.classList.add('text-slate-400', 'border-slate-800');
-            });
+    // Interactive Repository Log Engine
+    filterButtons.forEach(buttonElement => {
+        buttonElement.addEventListener('click', () => {
+            
+            // Revert state markers on alternative options
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Commit active visualization style metrics
+            buttonElement.classList.add('active');
 
-            // Activate chosen toggle asset
-            button.classList.add('active-filter', 'bg-cyan-500/10', 'text-cyan-400', 'border-cyan-500/30');
-            button.classList.remove('text-slate-400', 'border-slate-800');
+            const searchScopeToken = buttonElement.getAttribute('data-target');
 
-            const filterValue = button.getAttribute('data-filter');
+            // Evaluate configuration status matrices
+            catalogCards.forEach(cardNode => {
+                const infrastructureGroup = cardNode.getAttribute('data-group');
 
-            // Evaluate matrix view configuration updates
-            projectCards.forEach(card => {
-                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    card.style.display = 'block';
-                    setTimeout(() => card.style.opacity = '1', 50);
+                if (searchScopeToken === 'all' || infrastructureGroup === searchScopeToken) {
+                    // Instantly restore active visibility layout rules
+                    cardNode.style.display = 'block';
+                    cardNode.style.opacity = '1';
+                    cardNode.style.transform = 'scale(1)';
                 } else {
-                    card.style.opacity = '0';
-                    card.style.display = 'none';
+                    // Suppress unselected architecture options securely
+                    cardNode.style.opacity = '0';
+                    cardNode.style.transform = 'scale(0.95)';
+                    cardNode.style.display = 'none';
                 }
             });
         });

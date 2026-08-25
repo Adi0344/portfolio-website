@@ -1,40 +1,394 @@
-/* Custom Glow and Terminal Typing Aesthetics */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+/* --- Core Modern Root Custom Layout Variables --- */
+:root {
+    --color-base-bg: #070a12;
+    --color-card-bg: rgba(13, 19, 33, 0.7);
+    --color-nav-bg: rgba(7, 10, 18, 0.8);
+    --color-border-line: rgba(38, 50, 77, 0.5);
+    --color-text-bright: #f1f5f9;
+    --color-text-sub: #94a3b8;
+    
+    /* DevOps Specific Framework Accents */
+    --accent-cyan: #22d3ee;
+    --accent-emerald: #34d399;
+    --accent-purple: #c084fc;
+    --accent-amber: #fbbf24;
 }
 
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: rgb(34, 211, 238); }
+/* --- Clean Global Reset Architecture --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.typing-text {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-base-bg);
+    color: var(--color-text-bright);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* --- Matrix Grid Mesh Canvas Setup --- */
+.matrix-grid-overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 10%, rgba(14, 116, 144, 0.15), var(--color-base-bg) 75%);
+    z-index: -10;
+}
+
+/* --- Navigation Header Rules --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: var(--color-nav-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border-line);
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--accent-cyan);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--color-text-sub);
+    text-decoration: none;
+    margin-left: 24px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-cyan);
+}
+
+/* --- Container Block Infrastructure --- */
+.main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 64px 0;
+}
+
+.hero-section {
+    padding-top: 96px;
+}
+
+.section-heading {
+    font-family: monospace;
+    font-size: 1.35rem;
+    color: var(--color-text-bright);
+    margin-bottom: 32px;
+}
+
+.section-heading span {
+    color: var(--accent-cyan);
+}
+
+/* --- Terminal Console Window Layout CSS --- */
+.terminal-window {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border-line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.terminal-bar {
+    background: rgba(3, 7, 18, 0.9);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(38, 50, 77, 0.3);
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-red { background-color: #f43f5e; }
+.dot-yellow { background-color: #eab308; }
+.dot-green { background-color: #10b981; }
+
+.terminal-title {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #475569;
+    margin-left: 20px;
+}
+
+.terminal-body {
+    padding: 24px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    background: rgba(3, 7, 18, 0.4);
+}
+
+.terminal-line {
+    margin-bottom: 12px;
+}
+
+.cmd-prompt {
+    color: var(--accent-emerald);
+}
+
+.terminal-output-block {
+    border-left: 2px solid #1e293b;
+    padding-left: 18px;
+    margin: 12px 0 20px 8px;
+    color: var(--color-text-sub);
+}
+
+.json-key { color: #f472b6; }
+.json-value { color: var(--color-text-bright); }
+
+/* --- Complex Typing Engine Animations Keyframes --- */
+.typing-animation {
     display: inline-block;
     overflow: hidden;
-    border-right: 2px solid rgb(34, 211, 238);
+    border-right: 2px solid var(--accent-cyan);
     white-space: nowrap;
-    animation: 
-        typing 2s steps(30, end) infinite alternate,
-        blink-caret .75s step-end infinite;
+    animation: renderText 3s steps(35, end) infinite alternate, cursorBlink 0.8s step-end infinite;
 }
 
-/* Pulsing Status Heartbeat */
-.heartbeat {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+@keyframes renderText { from { width: 0 } to { width: 250px } }
+@keyframes cursorBlink { 50% { border-color: transparent } }
+
+.active-system-cursor {
+    border-right: 2px solid var(--accent-cyan);
+    animation: cursorBlink 0.8s step-end infinite;
 }
 
-@keyframes pulse {
+/* --- System Metrics Grid Block Architecture --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border-line);
+    padding: 24px;
+    border-radius: 8px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+}
+
+.skill-card.border-cloud:hover { border-color: var(--accent-cyan); }
+.skill-card.border-iac:hover { border-color: var(--accent-purple); }
+.skill-card.border-cicd:hover { border-color: var(--accent-emerald); }
+.skill-card.border-obs:hover { border-color: var(--accent-amber); }
+
+.skill-category {
+    font-family: monospace;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+}
+.txt-cloud { color: var(--accent-cyan); }
+.txt-iac { color: var(--accent-purple); }
+.txt-cicd { color: var(--accent-emerald); }
+.txt-obs { color: var(--accent-amber); }
+
+.skill-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.skill-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-sub);
+}
+
+/* --- Pipeline Registry Filter Mechanism Panels --- */
+.project-header-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.project-header-panel .section-heading { margin-bottom: 0; }
+
+.filter-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-toggle {
+    background: transparent;
+    border: 1px solid var(--color-border-line);
+    color: var(--color-text-sub);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-toggle:hover, .filter-toggle.active {
+    border-color: rgba(34, 211, 238, 0.4);
+    background: rgba(34, 211, 238, 0.08);
+    color: var(--accent-cyan);
+}
+
+.projects-container-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+}
+
+.project-node-card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border-line);
+    padding: 24px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.project-node-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(34, 211, 238, 0.3);
+    box-shadow: 0 12px 40px -20px rgba(34, 211, 238, 0.2);
+}
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.project-id {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #475569;
+}
+
+.system-status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(15, 23, 42, 0.6);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(51, 65, 85, 0.3);
+}
+
+.status-heartbeat-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: heartPulse 2s infinite;
+}
+.token-green { background-color: var(--accent-emerald); }
+.token-blue { background-color: var(--accent-cyan); }
+
+@keyframes heartPulse {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: .4; transform: scale(1.15); }
+    50% { opacity: 0.4; transform: scale(1.15); }
 }
 
-/* Subtle Interactive Scaling Transforms */
-.project-card, .skill-pill {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+.project-name-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px -15px rgba(34, 211, 238, 0.15);
+.project-text-details {
+    font-size: 0.88rem;
+    color: var(--color-text-sub);
+    margin-bottom: 20px;
+}
+
+.project-tech-tags {
+    display: flex;
+    gap: 12px;
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: rgba(34, 211, 238, 0.8);
+}
+
+/* --- Connection Endpoint Block Layout --- */
+.contact-panel-layout {
+    text-align: center;
+    padding: 96px 0;
+}
+
+.centered-title { text-align: center; }
+
+.contact-subtext-description {
+    color: var(--color-text-sub);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
+.connection-action-trigger {
+    display: inline-block;
+    padding: 14px 28px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    border: 1px solid rgba(34, 211, 238, 0.4);
+    color: var(--accent-cyan);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+.connection-action-trigger:hover {
+    background: var(--accent-cyan);
+    color: var(--color-base-bg);
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.3);
+    font-weight: 600;
+}
+
+/* --- Identity Bottom Ribbon Component --- */
+.footer-identity-bar {
+    text-align: center;
+    padding: 40px 0;
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #334155;
+    border-top: 1px solid var(--color-border-line);
 }
