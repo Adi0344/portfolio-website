@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adarsh Kumar Singh — Cloud DevOps Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top wrap">
+  <div class="mark">Adarsh Kumar Singh</div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="mainNav">
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="wrap hero">
+  <span class="role-tag">Available for new roles</span>
+  <h1>I turn<span class="script">"works on my machine"</span><br>into works in production.</h1>
+  <p class="lede">DevOps engineer specializing in containerization and infrastructure as code(IaC). Automating everything from local Docker setups to multi-region cloud deployments.</p>
+  <div class="hero-actions">
+    <a class="btn solid" href="#work">See the work</a>
+    <a class="btn" href="mailto:adarsh.singh0344@gmail.com">Get in touch</a>
+  </div>
+</div>
+
+<section id="about" class="wrap">
+  <div class="section-head"><h2>About</h2></div>
+  <div class="about-grid">
+    <div>
+      <p>Results-driven Cloud & DevOps Engineer with hands-on experience at LTIMindtree, specializing in enterprise cloud infrastructure management, automation, and CI/CD lifecycle delivery.</p>
+      <p>Certified in IBM DevOps and Software Engineering, combining strong software engineering principles (Python, TDD/BDD) with production-grade cloud operations across AWS and Linux.</p>
+      <p> Proven track record in orchestrating containerized workloads, automating infrastructure via Terraform, reducing deployment friction, and enforcing enterprise security baselines.</p>
+    </div>
+    <div class="skills">
+      <span>AWS</span><span>EC2</span><span>Cloud Watch</span><span>EKS</span>
+      <span>Linux</span><span>Kubernetes</span><span>Terraform</span><span>Docker</span>
+      <span>GitLab</span><span>Jenkins</span><span>AgroCD</span>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="wrap">
+  <div class="section-head"><h2>Projects</h2><span class="tag">4 projects</span></div>
+  <div class="projects">
+    <div class="proj-card">
+      <span class="year">2026</span>
+      <h3>Internal Developer Platform (IDP)</h3>
+      <p>An automated Internal Developer Platform (IDP) that provisions isolated, production-like ephemeral preview environments on-demand per pull request to eliminate configuration drift, deployment contention, and idle cloud costs.</p>
+      <a href="#">Read the writeup →</a>
+    </div>
+    <div class="proj-card">
+      <span class="year">2026</span>
+      <h3>GitOps Kubernetes Pipeline</h3>
+      <p>Automates the path from a developer's git commit to a running, security-scanned container in Amazon EKS, with secrets injected at runtime by HashiCorp Vault rather than baked into images or manifests.</p>
+      <a href="#">View project →</a>
+    </div>
+    <div class="proj-card">
+      <span class="year">2026</span>
+      <h3>Multi-Environment IaC Pipeline</h3>
+      <p>Uses Terraform with a locked, encrypted remote state backend to provision identical Staging and Production infrastructure, gated by static analysis and peer-reviewed plan output.</p>
+      <a href="#">View on GitHub →</a>
+    </div>
+    <div class="proj-card">
+      <span class="year">2026</span>
+      <h3>Observability Stack</h3>
+      <p>Integrates end-to-end observability—metrics, logs, dashboards, and automated alerts—into GitOps and IaC pipelines to detect and resolve failures before customer impact.</p>
+      <a href="#">View project →</a>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="wrap">
+  <div class="section-head"><h2>Experience</h2></div>
+  <div class="roles">
+    <div class="role-row">
+      <div><div class="rtitle">Cloud Engineer</div><div class="rorg">LTM</div></div>
+      <div class="rtime">May'25 — Present</div>
+      <ul class="rduties">
+      <li>CI/CD & GitOps: Maintained and enhanced CI/CD pipelines using Jenkins, Git, and Argo CD to automate builds and deployments for core industrial applications (SCADA, PPC, WAMS).</li>
+      <li>Container Orchestration: Managed containerized microservices deployments on Kubernetes clusters, monitoring API gateways and service health across Linux and Windows environments.</li>
+      <li>Infrastructure Automation: Assisted in writing and updating Terraform modules to provision cloud (AWS) and on-premise infrastructure for industrial asset monitoring platforms.</li>
+      <li>Pipeline Security & Ops: Integrated SAST security scanning into deployment workflows and resolved release dependencies to support system reliability.</li>
+    </ul>
+  </div>
+    </div>
+    <div class="role-row">
+      <div><div class="rtitle">Android Developer</div><div class="rorg">Internship</div></div>
+      <div class="rtime">May'24 — Jul'24</div>
+      <ul class="rduties">
+        <li>Learned core concepts of Java/Kotlin,  Android SDK, and UI design</li>
+        <li>Built user interfaces using XML layouts</li>
+        <li>Gained understanding of app lifecycle, debugging, and version control</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap" id="contact">
+  <h2>Let's talk</h2>
+  <p>Open to new roles and the occasional freelance project.</p>
+  <div class="contact-row">
+    <a class="btn solid" href="mailto:adarsh.singh0344@gmail.com">adarsh.singh0344@gmail.com</a>
+    <a class="btn" href="https://github.com/Adi0344">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/adarsh-kumar-singh01/">LinkedIn</a>
+  </div>
+  <div class="foot-bottom">Adarsh Kumar Singh — Mumbai, India — updated 2026</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
