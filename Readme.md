@@ -6,7 +6,7 @@ An interactive, terminal-themed personal portfolio website hosted on AWS EC2, fu
 
 ---
 
-## 🛠️ Tech Stack & Infrastructure
+## Tech Stack & Infrastructure
 
 - **Frontend:** HTML5, CSS3, JavaScript (Terminal Interface)
 - **Containerization:** Docker & Docker Compose
@@ -17,7 +17,7 @@ An interactive, terminal-themed personal portfolio website hosted on AWS EC2, fu
 
 ---
 
-## 🚀 Architecture Overview
+## Architecture Overview
 
 1. **Nginx Reverse Proxy:** Handles incoming requests on ports 80 (HTTP) and 443 (HTTPS).
 2. **HTTP Redirect:** Automatically redirects all unencrypted HTTP traffic to secure HTTPS.
@@ -26,7 +26,7 @@ An interactive, terminal-themed personal portfolio website hosted on AWS EC2, fu
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 portfolio-website/
